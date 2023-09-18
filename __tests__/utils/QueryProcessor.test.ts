@@ -57,7 +57,12 @@ describe("QueryProcessor", () => {
 
     test('should return squareCube', () => {
         expect(QueryProcessor("Which of the following numbers is both a square and a cube: 4096, 2165, 177, 9, 839, 1789, 729?")).toEqual("4096");
-        expect(QueryProcessor("Which of the following numbers is both a square and a cube: 64, 2165, 177, 9, 839, 1789, 729?")).toEqual("64");
+        expect(QueryProcessor("Which of the following numbers is both a square and a cube: 2165, 64, 177, 9, 839, 1789, 729?")).toEqual("64");
     });
 
+    test('should return prime', () => {
+        expect(QueryProcessor("Which of the following numbers are primes: 6, 41, 78, 44, 58?")).toEqual("41");
+        expect(QueryProcessor("Which of the following numbers are primes: 5, 412, 78, 44, 58?")).toEqual("5");
+
+    });
 });

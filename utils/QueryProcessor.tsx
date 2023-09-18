@@ -45,10 +45,27 @@ export default function QueryProcessor(query: string): string {
 
   const squareCubeMatch = query.match(/Which of the following numbers is both a square and a cube: (\d+), (\d+), (\d+), (\d+), (\d+), (\d+), (\d+)?/);
   if (squareCubeMatch) {
-    for (let i = 0; i < squareCubeMatch.length; i++) {
-      const x: number = parseInt(squareCubeMatch[1])
+    for (let i = 1; i < squareCubeMatch.length; i++) {
+      const x: number = parseInt(squareCubeMatch[i])
       const x_cube_root = Math.round(Math.cbrt(x));
       if (x_cube_root * x_cube_root * x_cube_root == x) {
+        return x.toString();
+      }
+    }
+  }
+  const primeMatch = query.match(/Which of the following numbers are primes: (\d+), (\d+), (\d+), (\d+), (\d+)?/);
+  if (primeMatch) {
+    for (let i = 1; i < primeMatch.length; i++) {
+      var isPrime = true;
+      let x = parseInt(primeMatch[i])      
+      for (let j = 2; j < x; j++) 
+      {
+        if (x % j == 0) {
+          isPrime = false;
+        }
+      }
+      
+      if (isPrime) {
         return x.toString();
       }
     }
