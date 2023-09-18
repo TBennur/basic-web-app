@@ -33,4 +33,14 @@ describe("QueryProcessor", () => {
             "Tanay"
           ));
     });
+
+    test('should return sum', () => {
+        expect(QueryProcessor("What is 12 plus 93?")).toEqual("105");
+        expect(QueryProcessor("What is 1 plus 93?")).toEqual("94");
+    });
+
+    test('should return multiply', () => {
+        expect(QueryProcessor("What is 12 multiplied by 9?")).toEqual("108");
+        expect(QueryProcessor("What is 1 multiplied by 93?")).toEqual("93");
+    });
 });
