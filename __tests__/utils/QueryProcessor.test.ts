@@ -39,7 +39,12 @@ describe("QueryProcessor", () => {
         expect(QueryProcessor("What is 1 plus 93?")).toEqual("94");
     });
 
-    test('should return multiply', () => {
+    test('should return difference', () => {
+        expect(QueryProcessor("What is 93 minus 12?")).toEqual("81");
+        expect(QueryProcessor("What is 34 minus 22?")).toEqual("12");
+    });
+
+    test('should return product', () => {
         expect(QueryProcessor("What is 12 multiplied by 9?")).toEqual("108");
         expect(QueryProcessor("What is 1 multiplied by 93?")).toEqual("93");
     });
