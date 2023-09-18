@@ -18,11 +18,19 @@ describe("QueryProcessor", () => {
           ));
     });
 
-    test('should return andrew od', () => {
+    test('should return andrew id', () => {
         const query = "what is your andrew id";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
             "tbennur"
+          ));
+    });
+
+    test('should return name', () => {
+        const query = "what is your name";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "Tanay Bennur"
           ));
     });
 });
