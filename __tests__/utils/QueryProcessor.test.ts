@@ -43,4 +43,10 @@ describe("QueryProcessor", () => {
         expect(QueryProcessor("What is 12 multiplied by 9?")).toEqual("108");
         expect(QueryProcessor("What is 1 multiplied by 93?")).toEqual("93");
     });
+
+    test('should return largest', () => {
+        expect(QueryProcessor("Which of the following numbers is the largest: 68, 49, 1")).toEqual("68");
+        expect(QueryProcessor("Which of the following numbers is the largest: 68, 49, 108")).toEqual("108");
+        expect(QueryProcessor("Which of the following numbers is the largest: 68, 490, 1")).toEqual("490");
+    });
 });
